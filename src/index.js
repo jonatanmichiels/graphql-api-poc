@@ -1,8 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import { ApolloServer } from 'apollo-server';
-import { PrismaClient } from '@prisma/client';
-import { Query, Client } from './resolvers';
+const fs = require('fs');
+const path = require('path');
+const { ApolloServer } = require('apollo-server');
+const { PrismaClient } = require('@prisma/client');
+const { Query, Client } = require('./resolvers');
 
 const typeDefs = fs.readFileSync(
   path.join(__dirname, 'schema.graphql'),
@@ -24,4 +24,5 @@ const server = new ApolloServer({
   },
 });
 
+// eslint-disable-next-line no-console
 server.listen().then(({ url }) => console.log(`Server is running on ${url}`));
