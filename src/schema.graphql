@@ -1,3 +1,54 @@
 type Query {
   info: String!
+  clients: [Client!]!
 }
+
+type Client {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  birthday: DateTime
+  addresses: [Address!]!
+  orders: [Order!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+}
+
+type Product {
+  id: ID!
+  name: String!
+  code: String!
+  price: Int!
+  description: String
+  orders: [Order!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+}
+
+type Address {
+  id: ID!
+  line: String!
+  zip: String!
+  city: String!
+  state: String
+  country: String
+  isBilling: Boolean
+  isShipping: Boolean
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+}
+
+type Order {
+  id: ID!
+  client: Client!
+  products: [Product!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+}
+
+scalar DateTime
