@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/jonatanmichiels/graphql-api-poc#readme",
   "devDependencies": {
+    "@prisma/cli": "^2.14.0",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
     "eslint": "^7.18.0",
@@ -43,6 +44,7 @@
     "*.js": "eslint --cache --fix"
   },
   "dependencies": {
+    "@prisma/client": "^2.14.0",
     "apollo-server": "^2.19.2"
   }
 }
