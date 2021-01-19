@@ -1,3 +1,4 @@
 import Query from './Query';
+import Client from './Client';
 
-export { Query };
+export { Query, Client };
