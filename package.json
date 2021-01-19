@@ -4,6 +4,10 @@
   "description": "A GraphQL API proof of concept",
   "main": "index.js",
   "scripts": {
+    "start": "tsc && node dist/index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +20,16 @@
   "bugs": {
     "url": "https://github.com/jonatanmichiels/graphql-api-poc/issues"
   },
-  "homepage": "https://github.com/jonatanmichiels/graphql-api-poc#readme"
+  "homepage": "https://github.com/jonatanmichiels/graphql-api-poc#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
 }
