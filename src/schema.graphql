@@ -1,6 +1,8 @@
 type Query {
   info: String!
   clients: [Client!]!
+  orders: [Order!]!
+  products: [Product!]!
 }
 
 type Client {
