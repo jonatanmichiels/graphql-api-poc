@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --watch 'src/**/*.js' --exec 'node' src/index.js",
+    "seed": "node prisma/seeds.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,7 +23,8 @@
   "homepage": "https://github.com/jonatanmichiels/graphql-api-poc#readme",
   "dependencies": {
     "@prisma/client": "^2.14.0",
-    "apollo-server": "^2.19.2"
+    "apollo-server": "^2.19.2",
+    "faker": "^5.1.0"
   },
   "devDependencies": {
     "@prisma/cli": "^2.14.0",
