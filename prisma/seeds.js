@@ -37,7 +37,7 @@ async function main() {
   for (let f = 0; f < CLIENTS_COUNT; f++) {
     const client = await prisma.client.create({
       data: {
-        firstName: name.findName(),
+        firstName: name.firstName(),
         lastName: name.lastName(),
         email: internet.email(),
       },
