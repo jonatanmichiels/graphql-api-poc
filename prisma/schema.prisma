@@ -43,8 +43,9 @@ model Product {
   id          String    @id @default(uuid())
   name        String
   code        String
-  description String
-  orders      Product[]
+  price       Float
+  description String?
+  orders      Order[]
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   deletedAt   DateTime?
@@ -52,10 +53,9 @@ model Product {
 
 model Order {
   id        String              @id @default(uuid())
-  quantity  Int
   client    Client              @relation(fields: [clientId], references: [id])
   clientId  String
-  products  Order[]
+  products  Product[]
   createdAt DateTime            @default(now())
   updatedAt DateTime            @updatedAt
   deletedAt DateTime?
