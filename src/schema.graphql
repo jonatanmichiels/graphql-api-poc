@@ -22,7 +22,7 @@ type Product {
   id: ID!
   name: String!
   code: String!
-  price: Int!
+  price: Float!
   description: String
   orders: [Order!]!
   createdAt: DateTime!
@@ -32,13 +32,13 @@ type Product {
 
 type Address {
   id: ID!
-  line: String!
+  addressLine: String!
   zip: String!
   city: String!
   state: String
   country: String
-  isBilling: Boolean
-  isShipping: Boolean
+  isBillingAddress: Boolean
+  isShippingAddress: Boolean
   createdAt: DateTime!
   updatedAt: DateTime!
   deletedAt: DateTime
