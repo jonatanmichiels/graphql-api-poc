@@ -10,10 +10,10 @@ Build the image
 $ docker build -t <your username>/graphql-api-poc:latest .
 ```
 
-Run a container
+Run a container (add the -d flag to run detatched)
 
 ```
-$ docker run -v ${PWD}/src:/usr/src/app/src -v ${PWD}/prisma:/usr/src/app/prisma -p 4000:4000 -p 5555:5555 -d <your username>/graphql-api-poc
+$ docker run -v ${PWD}/src:/usr/src/app/src -p 4000:4000 -p 5555:5555 <your username>/graphql-api-poc
 ```
 
 Access a shell in the running container
