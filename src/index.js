@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { ApolloServer } = require('apollo-server');
 const { PrismaClient } = require('@prisma/client');
-const { Query, Client, Order, Product } = require('./resolvers');
+const { Query, Mutation, Client, Order, Product } = require('./resolvers');
 
 const typeDefs = fs.readFileSync(
   path.join(__dirname, 'schema.graphql'),
@@ -11,6 +11,7 @@ const typeDefs = fs.readFileSync(
 
 const resolvers = {
   Query,
+  Mutation,
   Client,
   Order,
   Product,

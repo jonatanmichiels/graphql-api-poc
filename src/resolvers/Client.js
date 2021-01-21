@@ -1,8 +1,12 @@
 const addresses = async (client, args, context) =>
-  context.prisma.client.findUnique({ where: { id: client.id } }).addresses();
+  context.prisma.client
+    .findFirst({ where: { id: client.id, deletedAt: null } })
+    .addresses();
 
 const orders = async (client, args, context) =>
-  context.prisma.client.findUnique({ where: { id: client.id } }).orders();
+  context.prisma.client
+    .findFirst({ where: { id: client.id, deletedAt: null } })
+    .orders();
 
 module.exports = {
   addresses,

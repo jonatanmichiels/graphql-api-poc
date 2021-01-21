@@ -1,8 +1,20 @@
 type Query {
   info: String!
-  clients: [Client!]!
-  orders: [Order!]!
-  products: [Product!]!
+  getClient(id: String!): Client
+  getClients: [Client!]!
+  getProduct(id: String!): Product
+  getProducts: [Product!]!
+  getOrder(id: String!): Order
+  getOrders: [Order!]!
+}
+
+type Mutation {
+  createClient(client: CreateClient!, addresses: [CreateAddress!]): Client!
+  updateClient(id: String!, client: UpdateClient!): Client!
+  deleteClient(id: String!): Client!
+  createProduct(product: CreateProduct!): Product!
+  updateProduct(id: String!, product: UpdateProduct!): Product!
+  deleteProduct(id: String!): Product!
 }
 
 type Client {
@@ -18,6 +30,20 @@ type Client {
   deletedAt: DateTime
 }
 
+input CreateClient {
+  firstName: String!
+  lastName: String!
+  email: String!
+  birthday: DateTime
+}
+
+input UpdateClient {
+  firstName: String
+  lastName: String
+  email: String
+  birthday: DateTime
+}
+
 type Product {
   id: ID!
   name: String!
@@ -28,6 +54,20 @@ type Product {
   createdAt: DateTime!
   updatedAt: DateTime!
   deletedAt: DateTime
+}
+
+input CreateProduct {
+  name: String!
+  code: String!
+  price: Float!
+  description: String
+}
+
+input UpdateProduct {
+  name: String
+  code: String
+  price: Float
+  description: String
 }
 
 type Address {
@@ -42,6 +82,16 @@ type Address {
   createdAt: DateTime!
   updatedAt: DateTime!
   deletedAt: DateTime
+}
+
+input CreateAddress {
+  addressLine: String!
+  zip: String!
+  city: String!
+  state: String
+  country: String
+  isBillingAddress: Boolean
+  isShippingAddress: Boolean
 }
 
 type Order {
